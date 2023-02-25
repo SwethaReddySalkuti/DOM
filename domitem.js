@@ -83,11 +83,19 @@ function addItem(e)
 
   var newItem = document.getElementById('item').value;
 
+  var newDesc = document.getElementById('description').value;
+
   var li = document.createElement('li');
 
   li.className = 'list-group-item';
 
+  newItem = newItem.concat(" ",newDesc);
+
   li.appendChild(document.createTextNode(newItem));
+
+ // li.appendChild(document.createTextNode("  "));
+
+ // li.appendChild(document.createTextNode(newDesc));
 
   var delbut = document.createElement('button');
 
