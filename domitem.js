@@ -106,6 +106,13 @@ function addItem(e)
   li.appendChild(delbut);
 
   itemList.appendChild(li);
+
+  const obj = {
+            name : newItem,
+            desc : newDesc
+        };
+  const serialized = JSON.stringify(obj);
+  localStorage.setItem(newItem,serialized);
 }
 
 function removeItem(e)
@@ -118,6 +125,7 @@ function removeItem(e)
     {
       var li = e.target.parentElement;
       itemList.removeChild(li);
+      localStorage.removeItem(e.target.nameI);
     }
   }
 }
